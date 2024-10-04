@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                background-color: lightslategray;
+            }
+            .container{
+                width: 300px;
+                margin: 0 auto;
+                background: whitesmoke;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgb(0,0,0,0.1);
+            }
+            img{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            label{
+                display: block;
+                margin:10px 0 5px;
+            }
+            input,select{
+                width:calc(100% - 20px);
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+            .button{
+                display: flex;
+                justify-content: space-around;
+            }
+            .button img{
+                width: 60px;
+                height: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!--Header Image-->
+            <img src="headerimg.jpg" alt="Calculator Header" id="headerimg">
+            <label for="input1">Input1:</label>
+            <input type="number" id="input1" name="input1">
+
+            <label for="input2">Input2:</label>
+            <input type="number" id="input2" name="input2">
+
+            <label for="operation">Select Operation:</label>
+            <select id="operation" name="operation">
+                <option value="select">Select..</option>
+                <option value="add">ADD</option>
+                <option value="subract">Subtraction</option>
+                <option value="multiply">Multiply</option>
+                <option value="divide">Divide</option>
+            </select>
+            <div class="button">
+                <img src="submit.png" alt="Submit" id="submit">
+                <img src="reset.png" alt="Reset" id="reset">
+            </div>
+        </div>
+    </body>
+</html>

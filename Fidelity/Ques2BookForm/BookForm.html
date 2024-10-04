@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bookzone Library - Book Form</title>
+        <style>
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                margin: 20px;
+            }
+            .container{
+                max-width: 400px;
+                margin: 0 auto;
+                background-color: gray;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgb(0,0,0,0.1);
+            }
+            h1{
+                text-align: center;
+                color: #333
+            }
+            label{display: block;
+            margin-top:10px ;
+            font-weight: bold;
+        }
+        input,select{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"]{
+            background-color: #4caf50;
+            color: whitesmoke;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover{
+            background-color: #45a049;
+        }
+        .form-group{
+            margin-bottom: 15px;
+        }
+        .form-group input[type="number"]{
+            width: 80px;
+        }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Bookzone Library</h1>
+            <form id="bookForm" onsubmit="submitForm(event)">
+            <fieldset>
+                <legend>Customer Info</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="name">
+                <label for="telephone">Telephone:</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required autocomplete="tel">
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required autocomplete="email">
+            </fieldset>
+            <fieldset>
+                <legend>Books</legend>
+                <label for="books">Select Book:</label>
+                <input list="bookList" id="books" name="books" placeholder="Choose a book" required autocomplete="off">
+                <datalist id="bookList">
+                    <option value="The Great Gatbay"></option>
+                    <option value="1984"></option>
+                    <option value="To kill a Mockingbird"></option>
+                    <option value="Moby Dicky"></option>
+                </datalist>
+                <label for="quntity">Quntity (Maximum 5):</label>
+                <input type="number" id="quntity" name="quntity" min="1" max="5" required>
+
+            
+            </fieldset>
+            <input type="submit" value="Submit">
+            </form>
+            <p id="Message"></p>
+        </div>
+        <script>
+            function submitForm(event){
+            event.preventDefault();
+            alert("You have sucessfully submit the book Form");
+            document.getElementById("Message").innerText = "You have successfully submit the book Form.";
+            }
+            </script>
+    </body>
+</html>
