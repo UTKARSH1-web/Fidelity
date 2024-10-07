@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale-1.0">
+        <title>AC Maintenance Service</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                margin:20px;
+
+            }
+            h1{
+                color: #333;
+            }
+            form{
+                background-color: #5e585c;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                width: 60%;
+                margin: auto;
+
+            }
+            table{
+                width: 100%;
+                margin-top: 10px ;
+                
+            }
+            td{
+                
+                padding: 10px;
+                
+            }
+            th{
+                background-color: #e0e0e0;
+            }
+            .appointment-details{
+                margin-top: 20px;
+                border: 1px solid #ccc;
+                padding: 15px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>AC Maintenance Service</h1>
+        <form id="acServiceForm">
+            <table>
+                <tr>
+           <td> <label for="customerName">Customer Name:</label></td>
+            <td><input type="text" id="customerName" placeholder="Enter your name" required></td>
+                </tr>
+    <tr>
+            <td><label>Gender:</label></table></td>
+        <td>
+            <input type="radio" name="gender" id="male" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="Female" required>
+            <label for="female">Female</label>
+        </td>
+    </tr>
+<tr>
+           <td> <label for="mobileNumber">Mobile Number:</label></td>
+        <td>  <input type="tel" id="mobileNumber" placeholder="Enter your mobile Number" pattern="^[789]\d{9}$" required></td>
+    </tr>
+<tr>
+<td><label for="email">Email ID:</label></td>
+<td><input type="email"  id="email" placeholder="Enter your email ID" required>></td>
+</tr>
+<tr>
+<td><label for="address">Address:</label></td>
+<td><textarea  id="address" cols="25" rows="5" placeholder="Enter your Address" required></textarea></td>
+</tr>
+<tr>
+<td>         <label for="acTypes">AC Type:</label></td>
+<td>
+                <input list="acTypes"  id="acTypes" placeholder="Choose AC Type" required>
+            <datalist id="acTypes">
+                <option value="Split">
+                <option value="Window">
+                <option value="Centeralized">
+                <option value="Portable">
+            </datalist>
+        </td>
+    </tr>
+<tr>
+<td>         <label for="serviceType">Service Type:</label></td>
+<td>
+            <select  id="serviceType" required>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Repair">Repair</option>
+                <option value="Gas Refill">Gas Refill</option>
+            </select>
+        </td>
+    </tr>
+<tr>
+<td>          <label for="dateForAppointment">Date for Appointment:</label></td>
+<td> <input type="date"  id="dateForAppointment" required></td>
+</tr>
+<tr>
+    <td><label for="yearlyMaintenance">Yearly Maintenence:</label></td>
+<td><input type="checkbox"  id="yearlyMaintenance" name="yearlyMaintenance">
+            <label for="yearlyMaintenance">Select if required</label>
+        </td>
+    </tr>
+<tr>
+<td>        <label for="durtion">Duration in Months from Previous Services</label></td>
+<td>
+            <input type="range" name="duration" id="duration" min="0" max="6" step="1" title="0 to 6 Months" required>
+        </td>
+    </tr>
+<tr>
+    <td colspan="2">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </td>
+    </tr>
+    </table>
+        </form>
+        <!-- <div class="appointment-details" id="appointmentDetails">
+            <h2>Appointment Details</h2>
+            <table>
+            <tr>
+                <th>Details</th>
+                <th>Information</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td id=" detailsName"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td id="detailGender"></td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td id="detailsMobile"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td id="detailEmail"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td id="detailAddress"></td>
+            </tr>
+            <tr>
+                <td>AC Type</td>
+                <td id="detailsACType"></td>
+            </tr>
+            <tr>
+                <td>Service Type</td>
+                <td id="detailServiceType"></td>
+            </tr>
+            <tr>
+                <td>Appointment Date</td>
+                <td id="detailDate"></td>
+            </tr>
+            <tr>
+                <td>Yearly Maintenence</td>
+                <td id="detailYearlyMaintenence"></td>
+            </tr>
+            <tr>
+                <td>Duration</td>
+                <td id="detailDuration"></td>
+            </tr>
+        </table>
+        </div> -->
+        <!-- <script>
+            document.getElementById('acServiceForm').addEventListener('submit',function(event){
+                event.preventDefault();
+                const customerName = document.getElementById('customerName').value;
+                const gender = document.querySelector('input[name="gender"]:checked').value;
+                const mobileNumber = document.getElementById('mobileNumber').value;
+                const email = document.getElementById('email').value;
+                const address = document.getElementById('address').value;
+                const acType = document.getElementById('acType').value;
+                const serviceType = document.getElementById('dateForAppointment').value;
+                const dateForAppointment = document.getElementById('customerName').value;
+                const yearlyMaintenance = document.getElementById('yearlyMaintenence').checked ? "Yes" : "No";
+                const duration = document.getElementById('duration').value;
+                // const detailsOutput = `
+                // Name: ${customerName}<br>
+                // Gender: ${gender}<br>
+                // Mobile Number: ${mobileNumber}<br>
+                // Email: ${email}<br>
+                // Address: ${address}<br>
+                // Ac Type: ${acType}<br>
+                // Service Type: ${serviceType}<br>
+                // Appointment Date: ${dateForAppointment}<br>
+                // Yearly Maintenance: ${yearlyMaintenance}<br>
+                // Duration: ${duration} months
+                // `;
+                document.getElementById('detailName').innerText = coustomerName;
+                document.getElementById('detailsOutput').innerHTML = detailsOutput;
+                document.getElementById('appointmentDetails').style.display = 'block';
+            });
+        </script> -->
+    </body>
+</html>
